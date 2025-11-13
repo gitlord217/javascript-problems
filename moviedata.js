@@ -85,7 +85,15 @@ function totalDuration(arr){
         },0);
         return average;
     }
-
+ 
+    //function for getting the list with the specific rating
+    function ratingList(arr,rate){
+        const newList=arr.filter((val,i)=>{
+            const {rating}=val;
+            return rating===rate;
+        });
+        return newList;
+    }
 
 
 
@@ -155,3 +163,4 @@ let data = [
 console.log(totalDuration(data));
 console.log(uniqueActorsList(data));
 console.log(averageRating(data));
+console.log(ratingList(data,4.9));
