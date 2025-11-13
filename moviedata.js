@@ -62,6 +62,19 @@ function totalDuration(arr){
     }
 
 
+    //function for unique actors
+    function uniqueActorsList(arr){
+        const completeList=[];
+        for(const {actors} of arr){
+           for(const name of actors){
+            completeList.push(name);
+           }
+        }
+        //if the string in the array is unique, then its first and last index will be same
+        const uniqueList=completeList.filter(str=>completeList.indexOf(str)===completeList.lastIndexOf(str));
+        return uniqueList;
+    }
+
 
 
 
@@ -130,3 +143,4 @@ let data = [
 ];
 
 console.log(totalDuration(data));
+console.log(uniqueActorsList(data));
