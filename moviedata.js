@@ -75,6 +75,16 @@ function totalDuration(arr){
         return uniqueList;
     }
 
+    //function for average rating
+    function averageRating(arr){
+        let total=0;
+        const average=arr.reduce((acc,val,i)=>{
+            const {rating}=val;
+            total+=rating;
+            return ((total)/(i+1));
+        },0);
+        return average;
+    }
 
 
 
@@ -144,3 +154,4 @@ let data = [
 
 console.log(totalDuration(data));
 console.log(uniqueActorsList(data));
+console.log(averageRating(data));
